@@ -8,6 +8,7 @@ namespace MyClassesTest
     public class FileProcessTest
     {
         private const string BAD_FILE_NAME = @"C:\BadFileName.bat";
+        private string _GoodFileName;
 
         [TestMethod]
         public void FileNameDoesExists()
@@ -15,7 +16,7 @@ namespace MyClassesTest
             FileProcess fp = new FileProcess();
             bool fromCall;
 
-            fromCall = fp.FileExists(@"E:\LEARNING\Token.txt");
+            fromCall = fp.FileExists(@"");
 
             Assert.IsTrue(fromCall);
         }
