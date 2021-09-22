@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Configuration;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MyClasses;
 
@@ -16,9 +18,22 @@ namespace MyClassesTest
             FileProcess fp = new FileProcess();
             bool fromCall;
 
-            fromCall = fp.FileExists(@"");
+            SetGoodFileName();
+            File.AppendAllText(_GoodFileName, "Some Text");
+            fromCall = fp.FileExists(_GoodFileName);
+            File.Delete(_GoodFileName);
 
             Assert.IsTrue(fromCall);
+        }
+
+        public void SetGoodFileName()
+        {
+            _GoodFileName = ConfigurationManager.AppSettings["GoodFileName"];
+            if (_GoodFileName.Contains("[AppPath]"))
+            {
+                _GoodFileName = _GoodFileName.Replace("[AppPath]", 
+                    Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData));
+            }
         }
 
         [TestMethod]
