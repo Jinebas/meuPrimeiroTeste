@@ -48,6 +48,8 @@ namespace MyClassesTest
         [TestMethod]
         [Description("Check to see if a file does exist.")]
         [Owner("ThiagoA")]
+        [Priority(0)]
+        [TestCategory("NoException")]
         public void FileNameDoesExists()
         {
             FileProcess fp = new FileProcess();
@@ -82,6 +84,8 @@ namespace MyClassesTest
         [TestMethod]
         [Description("Check to see if a file does NOT exist.")]
         [Owner("ViniciusA")]
+        [Priority(0)]
+        [TestCategory("NoException")]
         public void FileNameDoesNotExists()
         {
             FileProcess fp = new FileProcess();
@@ -95,6 +99,8 @@ namespace MyClassesTest
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         [Owner("ViniciusA")]
+        [Priority(1)]
+        [TestCategory("Exception")]
         public void FileNameNullOrEmpty_ThrowsArgumentNullException()
         {
             //TODO
@@ -105,6 +111,8 @@ namespace MyClassesTest
 
         [TestMethod]
         [Owner("LauraA")]
+        [Priority(1)]
+        [TestCategory("Exception")]
         public void FileNameNullOrEmpty_ThrowsArgumentNullException_UsingTryCatch()
         {
             //TODO
