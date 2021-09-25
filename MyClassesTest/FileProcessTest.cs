@@ -72,6 +72,14 @@ namespace MyClassesTest
         }
 
         [TestMethod]
+        [Timeout(3100)]
+        public void SimulateTimeout()
+        {
+            System.Threading.Thread.Sleep(3000);
+        }
+
+
+        [TestMethod]
         [Description("Check to see if a file does NOT exist.")]
         [Owner("ViniciusA")]
         public void FileNameDoesNotExists()
