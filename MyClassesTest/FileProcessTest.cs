@@ -46,6 +46,8 @@ namespace MyClassesTest
         #endregion
 
         [TestMethod]
+        [Description("Check to see if a file does exist.")]
+        [Owner("ThiagoA")]
         public void FileNameDoesExists()
         {
             FileProcess fp = new FileProcess();
@@ -70,6 +72,8 @@ namespace MyClassesTest
         }
 
         [TestMethod]
+        [Description("Check to see if a file does NOT exist.")]
+        [Owner("ViniciusA")]
         public void FileNameDoesNotExists()
         {
             FileProcess fp = new FileProcess();
@@ -82,6 +86,7 @@ namespace MyClassesTest
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
+        [Owner("ViniciusA")]
         public void FileNameNullOrEmpty_ThrowsArgumentNullException()
         {
             //TODO
@@ -91,6 +96,7 @@ namespace MyClassesTest
         }
 
         [TestMethod]
+        [Owner("LauraA")]
         public void FileNameNullOrEmpty_ThrowsArgumentNullException_UsingTryCatch()
         {
             //TODO
